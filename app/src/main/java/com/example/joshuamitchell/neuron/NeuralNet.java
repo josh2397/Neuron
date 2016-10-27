@@ -9,30 +9,36 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class NeuralNet {
-    private InputLayer inputLayer = new InputLayer();
-    private HiddenLayer hiddenLayer = new HiddenLayer();
-    private ArrayList<HiddenLayer> listOfHiddenLayer = new ArrayList<HiddenLayer>();
-    private OutputLayer outputLayer = new OutputLayer();;
+    private InputLayer inputLayer;
+    private HiddenLayer hiddenLayer;
+    private ArrayList<HiddenLayer> listOfHiddenLayer;
+    private OutputLayer outputLayer;
     private int numberOfHiddenLayers;
 
     TextView textView;
 
     public void initNet(){
-        //TODO - Initialize the neural net as a whole. Layers are built, and each list of the weights of neurons is built randomly
 
-        numberOfHiddenLayers = 1;
+        inputLayer = new InputLayer();
+        inputLayer.setNumberOfNeuronsInLayer(2);
 
-        //InputLayer inputLayer = new InputLayer();
-        inputLayer.initLayer(inputLayer);
+        numberOfHiddenLayers = 2;
+        listOfHiddenLayer = new ArrayList<HiddenLayer>();
+        for (int i = 1; i <= numberOfHiddenLayers; i++){
 
-        for (int index = 1; index <= numberOfHiddenLayers; index++){
-
-            HiddenLayer hiddenLayer = new HiddenLayer();
-            hiddenLayer.initLayer(hiddenLayer, listOfHiddenLayer, inputLayer, outputLayer);
+            hiddenLayer = new HiddenLayer();
+            hiddenLayer.setNumberOfNeuronsInLayer(3);
+            listOfHiddenLayer.add(hiddenLayer);
         }
 
-        //OutputLayer outputLayer = new OutputLayer();
-        outputLayer.initLayer(outputLayer);
+        outputLayer = new OutputLayer();
+        outputLayer.setNumberOfNeuronsInLayer(1);
+
+        inputLayer = inputLayer.initLayer(inputLayer);
+
+        listOfHiddenLayer = hiddenLayer.initLayer(hiddenLayer, listOfHiddenLayer, inputLayer, outputLayer);
+
+        outputLayer = outputLayer.initLayer(outputLayer);
 
     }
 
