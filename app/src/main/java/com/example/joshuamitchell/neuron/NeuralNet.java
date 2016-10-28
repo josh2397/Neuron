@@ -22,7 +22,7 @@ public class NeuralNet {
         inputLayer = new InputLayer();
         inputLayer.setNumberOfNeuronsInLayer(2);
 
-        numberOfHiddenLayers = 2;
+        numberOfHiddenLayers = 1;
         listOfHiddenLayer = new ArrayList<HiddenLayer>();
         for (int i = 1; i <= numberOfHiddenLayers; i++){
 

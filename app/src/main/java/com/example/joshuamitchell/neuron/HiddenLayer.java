@@ -8,7 +8,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class HiddenLayer extends Layer {
-
+    /**
+     *
+     * @param hiddenLayer
+     * @param listOfHiddenLayer
+     * @param inputLayer
+     * @param outputLayer -
+     * @return - ArrayList<HiddenLayer> - returns the list of hiddenLayer objects
+     */
     public ArrayList<HiddenLayer> initLayer(HiddenLayer hiddenLayer, ArrayList<HiddenLayer> listOfHiddenLayer, InputLayer inputLayer, OutputLayer outputLayer){
 
         ArrayList<Double> listOfWeightIn = new ArrayList<Double>();
@@ -29,7 +36,7 @@ public class HiddenLayer extends Layer {
                     if (numberOfHiddenLayers > 1) {
                         limitOut = listOfHiddenLayer.get(i + 1).getNumberOfNeuronsInLayer();
                     } else {
-                        limitOut = listOfHiddenLayer.get(i + 1).getNumberOfNeuronsInLayer();
+                        limitOut = listOfHiddenLayer.get(i).getNumberOfNeuronsInLayer();
                     }
                 } else if (i == numberOfHiddenLayers - 1) { // last
                     limitIn = listOfHiddenLayer.get(i - 1).getNumberOfNeuronsInLayer();
