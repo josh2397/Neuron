@@ -43,7 +43,7 @@ public class NeuralNet {
     }
 
     public void printNet(){
-        //TODO - Print the neural net as a whole. Each input and output weight of each layer is shown
+
         //textView = (TextView) (findViewById(R.id.buttonOutput));
 
         inputLayer.printLayer(inputLayer);

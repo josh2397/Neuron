@@ -74,7 +74,9 @@ public class HiddenLayer extends Layer {
                 System.out.println(Arrays.deepToString(neuron.getListOfWeightIn().toArray() ));
                 System.out.println("Output Weights:");
                 System.out.println(Arrays.deepToString(neuron.getListOfWeightOut().toArray() ));
+                n++;
             }
+            h++;
         }
 
 

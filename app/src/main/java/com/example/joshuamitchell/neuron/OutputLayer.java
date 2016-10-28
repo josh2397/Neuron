@@ -31,7 +31,7 @@ public class OutputLayer extends Layer{
     }
 
     public void printLayer(OutputLayer outputLayer){
-        //TODO - Print the weights of the layer
+
         System.out.println("### OUTPUT LAYER ###");
 
         int n = 1;
@@ -40,7 +40,7 @@ public class OutputLayer extends Layer{
             System.out.println("Neuron #" + n + ":");
             System.out.println("Output Weights:");
             System.out.println(Arrays.deepToString(neuron.getListOfWeightOut().toArray() ));
-
+            n++;
         }
 
     }

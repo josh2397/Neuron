@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class InputLayer extends Layer {
 
     public InputLayer initLayer(InputLayer inputLayer){
-        //TODO - Initialize the input layer with pseudo random real numbers
+
 
         ArrayList<Double> listOfWeightInTemp = new ArrayList<Double>();
         ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
@@ -30,7 +30,7 @@ public class InputLayer extends Layer {
     }
 
     public void printLayer(InputLayer inputLayer){
-        //TODO - Print the input weights of the layer
+
         System.out.println("### INPUT LAYER ###");
         int n = 1;
         for (Neuron neuron : inputLayer.getListOfNeurons())
@@ -38,6 +38,7 @@ public class InputLayer extends Layer {
             System.out.println("Neuron #" + n + ":");
             System.out.println("Input Weights: ");
             System.out.println(Arrays.deepToString(neuron.getListOfWeightIn().toArray()));
+            n++;
         }
 
     }
