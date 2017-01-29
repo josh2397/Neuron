@@ -6,10 +6,10 @@ package com.example.joshuamitchell.neuron;
 
 import java.util.ArrayList;
 
-//import edu.packt.neuralnet.learn.Adaline;
-//import edu.packt.neuralnet.learn.Backpropagation;
-//import edu.packt.neuralnet.learn.LevenbergMarquardt;
-//import edu.packt.neuralnet.learn.Perceptron;
+import com.example.joshuamitchell.neuron.Adaline;
+import com.example.joshuamitchell.neuron.BackPropagation;
+import com.example.joshuamitchell.neuron.LevenbergMarquardt;
+import com.example.joshuamitchell.neuron.Perceptron;
 import com.example.joshuamitchell.neuron.Training.ActivationFncENUM;
 import com.example.joshuamitchell.neuron.Training.TrainingTypesENUM;
 
@@ -95,7 +95,7 @@ public class NeuralNet {
                 trainedNet = a.train(n);
                 return trainedNet;
             case BACKPROPAGATION:
-                Backpropagation b = new Backpropagation();
+                BackPropagation b = new BackPropagation();
                 trainedNet = b.train(n);
                 return trainedNet;
             case LEVENBERG_MARQUARDT:
@@ -119,7 +119,7 @@ public class NeuralNet {
                 a.printTrainedNetResult( n );
                 break;
             case BACKPROPAGATION:
-                Backpropagation b = new Backpropagation();
+                BackPropagation b = new BackPropagation();
                 b.printTrainedNetResult( n );
                 break;
             default:

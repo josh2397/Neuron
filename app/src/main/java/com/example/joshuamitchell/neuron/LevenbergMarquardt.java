@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Administrador
  */
-public class LevenbergMarquardt extends Backpropagation {
+public class LevenbergMarquardt extends BackPropagation {
 
     private Matrix jacobian = null;
     private double damping = 0.1;
